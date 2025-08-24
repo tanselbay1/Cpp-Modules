@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:16:47 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/08/24 11:51:32 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/08/24 13:10:30 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,19 @@ void Contact::displayContact() const
 
 void Contact::displaySummary(int index) const
 {
-	auto format = [](std::string str)
-	{
-		if (str.length() > 10)
-			return str.substr(0, 9) + ".";
-		return str;
-	};
+	std::string fn = firstName;
+	std::string ln = lastName;
+	std::string nn = nickname;
+
+	if (fn.length() > 10)
+		fn = fn.substr(0, 9) + ".";
+	if (ln.length() > 10)
+		ln = ln.substr(0, 9) + ".";
+	if (nn.length() > 10)
+		nn = nn.substr(0, 9) + ".";
+
 	std::cout << std::setw(10) << index << "|"
-			  << std::setw(10) << format(firstName) << "|"
-			  << std::setw(10) << format(lastName) << "|"
-			  << std::setw(10) << format(nickname) << std::endl;
+			  << std::setw(10) << fn << "|"
+			  << std::setw(10) << ln << "|"
+			  << std::setw(10) << nn << std::endl;
 }
