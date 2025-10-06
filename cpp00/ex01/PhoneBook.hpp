@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 12:58:40 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/08/24 12:58:50 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/09/30 15:38:27 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ private:
     int     contactCount;
 
 public:
-    PhoneBook();
+    PhoneBook(void);
+	~PhoneBook();
     void addContact();
     void searchContact() const;
 };

@@ -6,12 +6,20 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:16:47 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/08/24 13:10:30 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/01 15:26:10 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
 #include <iomanip> // for setw
+
+Contact::Contact(){
+	std::cout << "Contact Constructor called!" << std::endl;
+}
+Contact::~Contact(){
+	std::cout << "Contact Destructor called!" << std::endl;
+}
 
 void Contact::setContact(std::string fn, std::string ln, std::string nn,
 						 std::string pn, std::string ds)

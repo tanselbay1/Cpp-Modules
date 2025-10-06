@@ -6,13 +6,21 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 12:59:17 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/09/27 20:56:25 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/09/30 15:41:59 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
+
+PhoneBook::PhoneBook(void) : contactCount(0) {
+	std::cout << "PhoneBook Constructor called!" << std::endl;
+}
+
+PhoneBook::~PhoneBook(void){
+	std::cout << "PhoneBook Destructor called!" << std::endl;
+}
 
 // Simple helpers with internal linkage (no namespace per subject rules)
 static std::string trim(const std::string &s)
@@ -46,8 +54,6 @@ static bool promptNonEmpty(const std::string &label, std::string &out)
 		std::cout << "Field cannot be empty. Please try again." << std::endl;
 	}
 }
-
-PhoneBook::PhoneBook() : contactCount(0) {}
 
 void PhoneBook::addContact()
 {

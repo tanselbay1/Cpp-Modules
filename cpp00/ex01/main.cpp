@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 13:00:44 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/08/24 13:00:49 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/06 16:15:52 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main() {
 
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
+        if(!std::getline(std::cin, command))break;
 
         if (command == "ADD")
             pb.addContact();
