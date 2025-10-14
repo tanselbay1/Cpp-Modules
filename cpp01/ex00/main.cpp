@@ -6,12 +6,11 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:12:09 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/14 13:43:41 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/14 13:51:01 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-// #include "newZombie.cpp"
 #include <string>
 #include <iostream>
 
