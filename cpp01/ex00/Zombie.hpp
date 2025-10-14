@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:23:28 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/09 13:59:02 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/14 11:47:36 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@
 class Zombie {
 
 public:	
-	Zombie(void);
+	Zombie(std::string zombie_name);
 	~Zombie(void);
 	
 	void 		announce(void);
-	std::string getName(void) const;
-	void 		setName(std::string newName);
 	
 private:
 	std::string _name;
