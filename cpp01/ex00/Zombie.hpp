@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:23:28 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/14 11:47:36 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/14 12:45:19 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ public:
 	
 	void 		announce(void);
 	
-private:
+	private:
 	std::string _name;
 };
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif
