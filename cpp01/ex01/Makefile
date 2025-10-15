@@ -7,7 +7,8 @@ NAME = zombie
 
 # Source files
 SRCS = main.cpp \
-       Zombie.cpp
+       Zombie.cpp \
+	   zombieHorde.cpp
 
 # Object files (derived from source files)
 OBJS = $(SRCS:.cpp=.o)
