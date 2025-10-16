@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:19:44 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/16 12:27:43 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/16 14:01:26 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ private:
 	std::string 	_type;
 
 public:
-	Weapon(void);
+	Weapon(std::string type);
 	~Weapon(void);
 
-	std::string		getType(void);
-	void	 		setType(std::string);
+	const std::string& getType(void) const;
+	void	setType(std::string type);
 };
 
 #endif

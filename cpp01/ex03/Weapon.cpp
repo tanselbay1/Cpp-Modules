@@ -6,14 +6,14 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:28:25 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/16 12:37:28 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/16 14:00:52 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include <iostream>
 
-Weapon::Weapon(void) {
+Weapon::Weapon(std::string type) : _type(type) {
 	std::cout << "Weapon constructed!" << std::endl;
 	return;
 }
@@ -23,9 +23,8 @@ Weapon::~Weapon(void) {
 	return;
 }
 
-std::string Weapon::getType(void) {
-	std::string& weapon_type = this->_type;
-	return weapon_type;
+const std::string& Weapon::getType(void) const{
+	return this->_type;
 }
 
 void Weapon::setType(std::string type) {
