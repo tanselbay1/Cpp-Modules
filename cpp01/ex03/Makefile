@@ -3,10 +3,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Executable name
-NAME = zombie
+NAME = human
 
 # Source files
-SRCS = main.cpp
+SRCS =	main.cpp \
+		Weapon.cpp
 
 # Object files (derived from source files)
 OBJS = $(SRCS:.cpp=.o)
@@ -19,7 +20,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 # Rule to compile .cpp files into .o files
-%.o: %.cpp Zombie.hpp
+%.o: %.cpp Weapon.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule to clean up object files

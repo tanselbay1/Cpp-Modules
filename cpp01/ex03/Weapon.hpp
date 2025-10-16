@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 12:15:10 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/16 12:49:01 by tanselbayra      ###   ########.fr       */
+/*   Created: 2025/10/16 12:19:44 by tanselbayra       #+#    #+#             */
+/*   Updated: 2025/10/16 12:27:43 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Weapon.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int main(void){
-	Weapon machine_gun;
-	machine_gun.setType("Machine Gun");
-	std::cout << machine_gun.getType() << std::endl;
-	return (0);
-}
+#include <string>
+
+class Weapon {
+
+private:
+	std::string 	_type;
+
+public:
+	Weapon(void);
+	~Weapon(void);
+
+	std::string		getType(void);
+	void	 		setType(std::string);
+};
+
+#endif
