@@ -3,11 +3,13 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Executable name
-NAME = human
+NAME = violence
 
 # Source files
 SRCS =	main.cpp \
-		Weapon.cpp
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp
 
 # Object files (derived from source files)
 OBJS = $(SRCS:.cpp=.o)
@@ -20,7 +22,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 # Rule to compile .cpp files into .o files
-%.o: %.cpp Weapon.hpp
+%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule to clean up object files
