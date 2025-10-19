@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:54:16 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/16 15:08:29 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/19 14:06:19 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {
-	std::cout << this->_name << " is born with a " << &this->_weapon.getType() << std::endl;
+	std::cout << this->_name << " is born with a " << this->_weapon.getType() << std::endl;
 	return;
 }
 
