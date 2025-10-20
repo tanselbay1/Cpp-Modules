@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:55:43 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/20 14:21:41 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/20 14:33:14 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,17 @@ int main(int argc, char **argv) {
 		std::cerr << "Error: Couldn't open input file" << std::endl;
 		return (1);
 	}
-
+	
+	// 4. Create the output file
+	std::string outfileName = filename + ".replace";
+	std::ofstream outputFile(outfileName.c_str());
+	if (!outputFile.is_open()) {
+		std::cerr << "Error: Couldn't create output file: " << outfileName << std::endl;
+		inputFile.close();
+		return (1);
+	}
+	
+	// 5. Close files
+	inputFile.close();
+	outputFile.close();
 }
