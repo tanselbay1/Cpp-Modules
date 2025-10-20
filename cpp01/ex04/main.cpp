@@ -6,11 +6,12 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:55:43 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/20 14:03:14 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/20 14:21:41 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
 
 std::string replaceLine(std::string line, const std::string& s1, const std::string& s2) {
     // We can't do anything if s1 is empty, as find() would
@@ -32,10 +33,23 @@ std::string replaceLine(std::string line, const std::string& s1, const std::stri
 }
 
 int main(int argc, char **argv) {
+	// 1. Check the correct number of arguments
 	if (argc != 4) {
 		std::cerr << "Error: Invalid arguments." << std::endl;
 		std::cerr << "Usage ./replace <filename> <s1> <s2>" << std::endl;
 		return (1);
 	}
-	**argv = '\0';
+
+	// 2. Store arguments in strings(Lexer)
+	std::string filename = argv[1];
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+
+	// 3. Open the input file
+	std::ifstream inputFile(filename.c_str());
+	if (!inputFile.is_open()) {
+		std::cerr << "Error: Couldn't open input file" << std::endl;
+		return (1);
+	}
+
 }
