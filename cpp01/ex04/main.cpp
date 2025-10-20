@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:55:43 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/20 14:33:14 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/20 16:00:33 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ std::string replaceLine(std::string line, const std::string& s1, const std::stri
 
     size_t pos = line.find(s1); // Find the first occurrence
     while (pos != std::string::npos) {
-        // We found s1, now replace it
+        // Found s1 and now replace it
         line.erase(pos, s1.length());
         line.insert(pos, s2);
 
@@ -60,8 +60,24 @@ int main(int argc, char **argv) {
 		inputFile.close();
 		return (1);
 	}
+
+	// 6. Read, replace and write loop
+	std::string line;
+	int i = 0;
+	while (std::getline(inputFile, line)) {
+		std::string modifiedLine = replaceLine(line, s1, s2);
+		outputFile << modifiedLine;
+		std::cout << "I: " << ++i << std::endl;
+		// Add the newline back, unless it's the last line and it was empty
+		// (getline strips the newline)
+		if (!inputFile.eof())
+			outputFile << std::endl;
+	}
 	
 	// 5. Close files
 	inputFile.close();
 	outputFile.close();
+
+	std::cout << "Succesfully replaced content in " << outfileName << std::endl;
+	return (0);
 }
