@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:31:16 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/20 16:34:55 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/20 16:54:43 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define HARL_HPP
 
 #include <string>
+#include <iostream>
 
 class Harl {
 

@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:36:20 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/20 16:48:25 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/20 16:59:06 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void Harl::complain(std::string level) {
         "ERROR"
     };
 
-    // 2. Define our function pointer type to make it readable
+    // 2. Define the function pointer type to make it readable
     typedef void (Harl::*HarlMemFn)(void);
 
     // 3. Create a "value" array of the matching function pointers
@@ -69,6 +69,6 @@ void Harl::complain(std::string level) {
         }
     }
 
-    // Optional: Handle unknown levels
+    // Handle unknown levels
     std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
