@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 14:22:48 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/10/31 15:14:45 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/10/31 15:18:45 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Fixed {
 	
 private:
-	int _fixedPointValue;
-	int _fractionalBits;
+	int 				_fixedPointValue;
+	static const int 	_fractionalBits;
 	
 public:
 	Fixed(void);
