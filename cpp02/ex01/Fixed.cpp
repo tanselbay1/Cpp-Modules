@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:59:04 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/04 16:16:57 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/04 16:28:26 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Fixed::~Fixed(void) {
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointValue);
 }
 
