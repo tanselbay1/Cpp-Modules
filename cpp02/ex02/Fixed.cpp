@@ -6,7 +6,7 @@
 /*   By: tanselbay1 <tanselbay1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:39:39 by tanselbay1        #+#    #+#             */
-/*   Updated: 2025/11/10 15:52:59 by tanselbay1       ###   ########.fr       */
+/*   Updated: 2025/11/10 16:16:40 by tanselbay1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,32 @@
 const int Fixed::_fractionalBits = 8;
 
 Fixed::Fixed(void): _fixedPointValue(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
 // Constructor that takes an integer
 Fixed::Fixed(const int intValue) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	// Shift the integer left by 8 bits to make room for the fractional part
 	this->_fixedPointValue = intValue << _fractionalBits;
 }
 
 // Constructor that takes a float
 Fixed::Fixed(const float floatValue) {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	// Multiply by 2^8 (256) and round to the nearest integer
 	this->_fixedPointValue = roundf(floatValue * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& src) {
-	std::cout << "Copy constructor called!" << std::endl;
+	//std::cout << "Copy constructor called!" << std::endl;
 	*this = src;
 	return;
 }
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	
 	if (this != &rhs)
 		this->_fixedPointValue = rhs.getRawBits();
@@ -49,7 +49,7 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 	return;
 }
 
@@ -59,7 +59,7 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedPointValue = raw;
 }
 
@@ -151,4 +151,31 @@ Fixed Fixed::operator--(int) {
     return (temp);
 }
 
-// 4. Static Min and Max Functions
+// 4. Static Min and Max Member Functions
+// Non-const version - min
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+    if (a.getRawBits() < b.getRawBits())
+        return a;
+    return b;
+}
+
+// Const version - min
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+    if (a.getRawBits() < b.getRawBits())
+        return a;
+    return b;
+}
+
+// Non-const version - max
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+    if (a.getRawBits() > b.getRawBits())
+        return a;
+    return b;
+}
+
+// Const version - max
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+    if (a.getRawBits() > b.getRawBits())
+        return a;
+    return b;
+}
