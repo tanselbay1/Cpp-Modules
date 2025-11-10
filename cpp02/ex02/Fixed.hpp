@@ -6,7 +6,7 @@
 /*   By: tanselbay1 <tanselbay1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:26:18 by tanselbay1        #+#    #+#             */
-/*   Updated: 2025/11/10 13:40:17 by tanselbay1       ###   ########.fr       */
+/*   Updated: 2025/11/10 15:59:31 by tanselbay1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ public:
     Fixed operator-(const Fixed& rhs) const;
     Fixed operator*(const Fixed& rhs) const;
     Fixed operator/(const Fixed& rhs) const;
+
+    // 3. Increment/Decrement Operators
+    Fixed& operator++(void);     // Prefix ++a
+    Fixed  operator++(int);      // Postfix a++
+    Fixed& operator--(void);     // Prefix --a
+    Fixed  operator--(int);      // Postfix a--
+
 };
 
 // Printing Operator Overload - something like (a.print("hello"))

@@ -6,7 +6,7 @@
 /*   By: tanselbay1 <tanselbay1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:39:39 by tanselbay1        #+#    #+#             */
-/*   Updated: 2025/11/10 14:12:05 by tanselbay1       ###   ########.fr       */
+/*   Updated: 2025/11/10 15:52:59 by tanselbay1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,3 +125,30 @@ Fixed Fixed::operator*(const Fixed& rhs) const {
 Fixed Fixed::operator/(const Fixed& rhs) const {
     return (Fixed(this->toFloat() / rhs.toFloat()));
 }
+
+// 3. Increment/Decrement Operators
+// Prefix ++a and --a
+Fixed& Fixed::operator++(void) {
+    this->_fixedPointValue++;
+    return (*this);
+}
+
+Fixed& Fixed::operator--(void) {
+    this->_fixedPointValue--;
+    return (*this);
+}
+
+// Postfix ++a and --a
+Fixed Fixed::operator++(int) {
+    Fixed temp = *this;
+    ++(*this);
+    return (temp);
+}
+
+Fixed Fixed::operator--(int) {
+    Fixed temp = *this;
+    --(*this);
+    return (temp);
+}
+
+// 4. Static Min and Max Functions
