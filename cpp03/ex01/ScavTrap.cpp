@@ -6,12 +6,13 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:59:37 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/12 20:06:03 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:39:58 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+// Because ScavTrap is a derived class from ClapTrap. It calls ClapTrap constructor first
 ScavTrap::ScavTrap(void) : ClapTrap() {
     // Set ScavTrap specific stats
     this->_hitPoints = 100;
@@ -21,7 +22,7 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
     std::cout << "ScavTrap: Default Constructor called for " << this->_name << std::endl;
 }
 
-// This is the most important part!
+// Because ScavTrap is a derived class from ClapTrap. It calls ClapTrap name constructor first
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     // Set ScavTrap specific stats
     this->_hitPoints = 100;
@@ -46,15 +47,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
     return *this;
 }
 
-// Destructor
 ScavTrap::~ScavTrap(void) {
     std::cout << "ScavTrap: Destructor called for " << this->_name << std::endl;
-    // The ClapTrap destructor is called automatically right after this
 }
 
 // Overridden attack function
 void ScavTrap::attack(const std::string& target) {
-    // Check for HP and Energy
     if (this->_hitPoints == 0) {
         std::cout << "ScavTrap " << this->_name << " is already defeated!" << std::endl;
         return;
@@ -64,7 +62,7 @@ void ScavTrap::attack(const std::string& target) {
         return;
     }
 
-    this->_energyPoints--; // Consume energy
+    this->_energyPoints--;
     
     // New attack message!
     std::cout << "ScavTrap " << this->_name << " viciously attacks " << target

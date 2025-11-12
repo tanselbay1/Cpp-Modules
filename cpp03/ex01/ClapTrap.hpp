@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:42:13 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/12 19:42:17 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:25:47 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap {
     
-private:
+protected:
     std::string     _name;
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
