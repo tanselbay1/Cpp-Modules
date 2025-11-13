@@ -6,13 +6,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = flagtrap
 
 # Source files
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 
 # Header files
-DEPS = ClapTrap.hpp ScavTrap.hpp
+DEPS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 # Default rule
 all: $(NAME)
