@@ -6,7 +6,7 @@
 /*   By: tanselbay1 <tanselbay1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 11:39:04 by tanselbay1        #+#    #+#             */
-/*   Updated: 2025/11/13 11:40:03 by tanselbay1       ###   ########.fr       */
+/*   Updated: 2025/11/13 12:18:04 by tanselbay1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int main(void) {
     ScavTrap scavA("SCAV-01");
     scavA.attack("raider");
     scavA.guardGate();
+    std::cout << std::endl;
+
+    std::cout << "--- Testing Copying ---" << std::endl;
+    ScavTrap scavB = scavA;
+    scavB.takeDamage(60);
     std::cout << std::endl;
 
     std::cout << "--- Creating FragTrap ---" << std::endl;
