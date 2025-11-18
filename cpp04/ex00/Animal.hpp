@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:15:34 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/18 20:23:48 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/18 20:43:30 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	virtual ~Animal(void);
 
 	std::string getType(void) const;
-	virtual void makeSound(void);
+	virtual void makeSound(void) const;
 };
 
 #endif
