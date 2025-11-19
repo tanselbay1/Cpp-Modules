@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:24:33 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 15:22:54 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 16:28:58 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Animal& Animal::operator=(const Animal &rhs) {
 }
 
 Animal::~Animal(void) {
-	std::cout << type << "Animal died!" << std::endl;
+	std::cout << "Animal died!" << std::endl;
 }
 
 std::string Animal::getType(void) const{
