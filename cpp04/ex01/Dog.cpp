@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:17:20 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/18 21:18:18 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 15:22:08 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 Dog::Dog(void) : Animal() {
     this->type = "Dog";
-    std::cout << "Dog is born!" << std::endl;
+	this->_brain = new Brain();
+    std::cout << "Dog is born with a brain!" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : Animal(src) {
     this->type = src.type;
-    std::cout << "Dog copy constructor called!" << std::endl;
+	this->_brain = new Brain(*src._brain);
+    std::cout << "Dog copy constructor called(Deep Copy)!" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &rhs) {
     std::cout << "Dog copy assignment operator called!" << std::endl;
     if (this != &rhs) {
         Animal::operator=(rhs); // Call the base class assignment
+		delete this->_brain; // Delete current brain to prevent memory leak
+		this->_brain = new Brain(*rhs._brain);
         this->type = rhs.type;
     }
     return *this;
@@ -33,6 +37,7 @@ Dog& Dog::operator=(const Dog &rhs) {
 
 Dog::~Dog(void) {
     std::cout << "Dog rest in piece!" << std::endl;
+	delete this->_brain;
 }
 
 void Dog::makeSound(void) const {

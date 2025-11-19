@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:15:34 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/18 20:43:30 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 15:18:46 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 #include <string>
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal {
 
 protected:
-	std::string type;	
+	std::string	type;
 	
 public:
 	Animal(void);
