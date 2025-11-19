@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:33:53 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/18 21:33:56 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 11:46:17 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ int main() {
     std::cout << "I Type: " << i->getType() << " " << std::endl;
 
     // These should output the specific animal sound (Meow/Woof)
-    // because makeSound() IS virtual in Animal class.
-    i->makeSound(); 
+    // because makeSound() IS virtual in Animal class
+	// and virtual makes member function dynamic.
     j->makeSound();
+    i->makeSound(); 
     meta->makeSound();
 
     // ========================================================
@@ -43,7 +44,7 @@ int main() {
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
-    std::cout << "WrongCat Type: " << wrongCat->getType() << " " << std::endl;
+    std::cout << "WrongCat Type: " << wrongCat->getType() << std::endl;
 
     // This will output "WrongAnimal sound!" instead of "WrongCat Meow!"
     // because makeSound() is NOT virtual.
