@@ -6,19 +6,19 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:17:20 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 15:22:08 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 17:09:31 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) : AAnimal() {
     this->type = "Dog";
 	this->_brain = new Brain();
     std::cout << "Dog is born with a brain!" << std::endl;
 }
 
-Dog::Dog(const Dog &src) : Animal(src) {
+Dog::Dog(const Dog &src) : AAnimal(src) {
     this->type = src.type;
 	this->_brain = new Brain(*src._brain);
     std::cout << "Dog copy constructor called(Deep Copy)!" << std::endl;
@@ -27,7 +27,7 @@ Dog::Dog(const Dog &src) : Animal(src) {
 Dog& Dog::operator=(const Dog &rhs) {
     std::cout << "Dog copy assignment operator called!" << std::endl;
     if (this != &rhs) {
-        Animal::operator=(rhs); // Call the base class assignment
+        AAnimal::operator=(rhs); // Call the base class assignment
 		delete this->_brain; // Delete current brain to prevent memory leak
 		this->_brain = new Brain(*rhs._brain);
         this->type = rhs.type;

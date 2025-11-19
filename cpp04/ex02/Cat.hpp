@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:57:32 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 15:20:55 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 17:09:06 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 
 private:
 	Brain	*_brain;	

@@ -6,7 +6,7 @@
 /*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:15:34 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 15:18:46 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/19 17:06:35 by tanselbayra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,22 @@
 #include <iostream>
 #include "Brain.hpp"
 
-class Animal {
+class AAnimal {
 
 protected:
 	std::string	type;
 	
 public:
-	Animal(void);
-	Animal(const Animal &src);
-	Animal &operator=(const Animal &rhs);
-	virtual ~Animal(void);
+	AAnimal(void);
+	AAnimal(const AAnimal &src);
+	AAnimal &operator=(const AAnimal &rhs);
+	virtual ~AAnimal(void);
 
 	std::string getType(void) const;
-	virtual void makeSound(void) const;
+
+	// Now this is a Pure Virtual Function
+	// and AAnimal is Abstract. Cannot initialize like 'new AAnimal()'
+	virtual void makeSound(void) const = 0;
 };
 
 #endif
