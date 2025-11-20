@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
+/*   By: tanselbay1 <tanselbay1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 14:18:39 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 14:22:59 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/20 11:19:32 by tanselbay1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ Brain::Brain(void) {
     std::cout << "🧠 Brain default constructor called." << std::endl;
 	
     for (int i = 0; i < 100; ++i) {
-        this->ideas[i] = "Idea " + std::to_string(i); 
+        std::stringstream ss;
+        // 2. Feed the integer 'i' into the stream
+        ss << i;
+        this->ideas[i] = "Idea " + ss.str();
     }
 }
 
