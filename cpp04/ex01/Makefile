@@ -1,8 +1,11 @@
-NAME        = Animal
+# Compiler and flags
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CC          = c++
-CFLAGS      = -Wall -Wextra -Werror -std=c++98
+# Executable name
+NAME = Animal
 
+# Source files
 SRCS        = main.cpp \
               Animal.cpp \
               Dog.cpp \
@@ -11,31 +14,35 @@ SRCS        = main.cpp \
               WrongCat.cpp \
 			  Brain.cpp
 
-OBJS        = $(SRCS:.cpp=.o)
+# Object files
+OBJS = $(SRCS:.cpp=.o)
 
-RM          = rm -f
+# Header files
+DEPS =		Animal.hpp \
+            Dog.hpp \
+            Cat.hpp \
+            WrongAnimal.hpp \
+            WrongCat.hpp \
+			Brain.hpp
 
-# Colors for pretty output (Optional but nice)
-GREEN       = \033[0;32m
-RESET       = \033[0m
-
+# Default rule
 all: $(NAME)
 
+# Link rule
 $(NAME): $(OBJS)
-	@echo "$(GREEN)Compiling $(NAME)...$(RESET)"
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(GREEN)Done! Executable is ./$(NAME)$(RESET)"
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+# Compile rule
+# %.o depends on its .cpp and the .hpp
+%.o: %.cpp $(DEPS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Clean rules
 clean:
-	@echo "Cleaning objects..."
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	@echo "Cleaning executable..."
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tanselbayraktaroglu <tanselbayraktarogl    +#+  +:+       +#+        */
+/*   By: tbayrakt <tbayrakt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:17:20 by tanselbayra       #+#    #+#             */
-/*   Updated: 2025/11/19 15:22:08 by tanselbayra      ###   ########.fr       */
+/*   Updated: 2025/11/20 12:14:31 by tbayrakt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Dog& Dog::operator=(const Dog &rhs) {
         Animal::operator=(rhs); // Call the base class assignment
 		delete this->_brain; // Delete current brain to prevent memory leak
 		this->_brain = new Brain(*rhs._brain);
+        //this->_brain = rhs._brain; // Shallow copy (for testing purposes)
         this->type = rhs.type;
     }
     return *this;
